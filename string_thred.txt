@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication12
+{
+    class Program
+    {
+        static void Main()
+        {
+            Action<string> objDel = Display;
+            Console.WriteLine("before");
+
+            //start the display on seperated thread 
+            objDel.BeginInvoke("Takley", null, null);
+            Console.WriteLine("after");
+            Console.ReadLine();
+
+        }
+        static void Display(string s)
+        {
+            Console.WriteLine("processing ");
+            System.Threading.Thread.Sleep(3000);
+            Console.WriteLine("dispaly  " + s);
+
+
+        }
+    }
+}
+

@@ -1,0 +1,75 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication7
+{
+    class Program2
+    {
+        static void Main1(string[] args)
+        {
+
+
+            Class1 ob = new Class1();
+
+            //create a delegate obect tat poits to te evetnt handler
+            InvalidError obj = obj_InvalidP1;
+
+            //pass te delegate to te event 
+            ob.InvalidP1 += obj;
+
+            ob.P1 = -1;
+
+            Console.ReadLine();
+        }
+
+        static void Main()
+        {
+            Class1 ob = new Class1();
+            ob.InvalidP1 += obj_InvalidP1;
+            ob.P1 = -1;
+            Console.ReadLine();
+
+        }
+        static void obj_InvalidP1()
+        {
+            Console.WriteLine("Event handler here");
+        }
+
+    }
+    //step 1--create a delegtae matchig the same name as the event hanadler 
+    public delegate void InvalidError();
+    public class Class1
+    {
+
+        //step 2--cfreatea event of the delagate type
+        public event InvalidError InvalidP1;
+        private int p1;
+        public int P1
+        {
+            get
+            {
+                return p1;
+            }
+            set
+            {
+
+                if (value > 0)
+                    p1 = value;
+                else
+                {
+                    //step 3:raise the event 
+                    InvalidP1();
+                }
+
+            }
+
+        }
+    }
+
+}
+
+
+

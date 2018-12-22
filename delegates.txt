@@ -1,0 +1,36 @@
+using System;
+delegate int NumberChager(int n);
+namespace DelegateApp1
+{
+    class TestDelegate
+    {
+        
+        
+        static int num = 10;
+        public static int Addn(int p)
+        {
+            num += p;
+            return num;
+        }
+        public static int Multn(int q)
+        {
+            num *= q;
+            return num;
+        }
+        public static int getn()
+    {
+        return num;
+    }
+    static void Main(string [] args)
+    {//creatig delegetese istace
+        NumberChager c1=new NumberChager(Addn);
+        NumberChager c2=new NumberChager(Multn);
+        //callig te method usig delegates object 
+        c1(20);
+        Console.WriteLine("Value of add "+getn());
+        c2(60);
+        Console.WriteLine("vale of multipl"+getn());
+        Console.ReadKey();
+    }
+    }
+}

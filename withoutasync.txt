@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Asynchronus3Callback
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Func<string, string> objDel = Display;
+            Console.WriteLine("before");
+            objDel.BeginInvoke("in captail", new AsyncCallback (CallBackFunc), null);
+            Console.WriteLine("after");
+            Console.ReadLine();
+                
+
+        }
+        static string Display(string a)
+        {
+            System.Threading.Thread.Sleep(2000);
+            Console.WriteLine("Dispaly called" + a);
+            return a.ToUpper();
+        }
+
+        static void CallBackFunc(IAsyncResult ar)
+        {
+
+            Console.WriteLine("Call back fnction called");
+        }
+    }
+}
+

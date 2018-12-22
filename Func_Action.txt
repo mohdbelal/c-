@@ -1,0 +1,90 @@
+using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINKEDQUERY123
+{
+    class Program
+    {
+        public delegate void Del1();
+        //static void Main1(string[] args)
+        //{
+
+        //    //Del1 o = Display;
+        //    //o();
+        //    //Action o = new Action(Display);
+
+        // //   o();
+        //    Action o1 = Display;
+        //    o1();
+
+
+        //    Action<string> o2 = Display;
+        //    o2("bilal");
+
+        //    Action<string, int> o3 = Display;
+        //    o3("bilal", 12);
+        //    Console.ReadLine();
+
+        //}
+        //static void Display()
+        //{
+        //    Console.WriteLine("o1 called @ 1st position \n");
+        //}
+
+        //static void Display(string b)
+        //{
+        //    Console.WriteLine("Disp  called @ 2nd \n" + b);
+        //}
+
+        //static void Display(string a, int b)
+        //{
+
+        //    Console.WriteLine(" 3 rd called @ string and int called \t "+a);
+        //}
+      //static void Main2()
+      //  {
+
+      //      Func<int, int, int> o = Add;
+      //      Console.WriteLine(o(12, 13));
+      //      Console.ReadLine();
+
+
+      //  }
+      //  static int Add(int a,int b)
+      //  { return a + b; }
+
+        static void Main()
+        {
+            Func<int, bool> o1 = isEven;
+            Console.WriteLine(o1(6));
+           
+
+            Func<int, bool> o2 = isOdd;
+            Console.WriteLine(o2(5));
+            Console.ReadLine();
+        }
+        static bool isEven(int b)
+        {
+            return (b % 2 == 0);
+        }
+        static bool isOdd(int b)
+        {
+            return (b % 2 != 0);
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}
+

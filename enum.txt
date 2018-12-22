@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace StructCode
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Display(0);
+            DisplayWithEnum(TimeOfDay.Night);
+            Console.ReadLine();
+        }
+
+        static void Display(int i)
+        {
+            if (i == 0)
+                Console.WriteLine("good morning \");
+            else if (i == 1)
+                Console.WriteLine("good afteroon");
+            else if (i == 2)
+                Console.WriteLine("Good eveig");
+            else if (i == 3)
+                Console.WriteLine("good night");
+        }
+        static void DisplayWithEnum(TimeOfDay t)
+        {
+            if (t == TimeOfDay.Morning)
+                Console.WriteLine("Good Mornig");
+            else if (t == TimeOfDay.Afternoon)
+                Console.WriteLine("Good Afteroo");
+            else if (t == TimeOfDay.Evening)
+                Console.WriteLine("Good evening");
+            else if (t == TimeOfDay.Night)
+                Console.WriteLine("Good Night");
+        }
+    }
+
+    public enum TimeOfDay : short
+    {
+        Morning, Afternoon, Evening, Night
+
+    }
+}
+
+
+       
+    
+
+

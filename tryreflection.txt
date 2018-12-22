@@ -1,0 +1,29 @@
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication14
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            Assembly asm = Assembly.LoadFrom(@"C:\Users\belal\Documents\visual studio 2015\Projects\ConsoleApplication14\ConsoleApplication14\bin\Debug\ConsoleApplication14.exe");
+
+            Console.WriteLine(asm.FullName);
+            Type[] arrType = asm.GetTypes();
+            foreach (Type t in arrType)
+            {
+                Console.WriteLine("  " + t.Name);
+            }
+            Console.ReadLine();
+
+        }
+
+    }
+}
+
